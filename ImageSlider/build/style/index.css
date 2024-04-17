@@ -1,0 +1,87 @@
+body{
+    margin: 0px;
+}
+.popup{
+    background-color: white;
+    padding: 10px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    opacity: 0;
+    border-radius: 20px;
+    position: absolute;
+    top: 20px;
+    left: 40vw;
+    margin: 0px auto;
+    animation: anim 3s ease-out;
+}
+@keyframes anim {
+    0%{
+        transform: translateY(-50px) scale(0.5);
+        opacity: 1;
+    }
+}
+.image-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url("../images/IMG1.JPG");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    transition: 1s ease-in-out;
+}
+.relative-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    position: relative;
+}
+.image-slide::-webkit-scrollbar{
+    width: 10px;
+}
+.image-slide::-webkit-scrollbar-track{
+    background: none;
+}
+.image-slide::-webkit-scrollbar-thumb{
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+    cursor: pointer;
+} 
+.image-slide{
+    position: absolute;
+    margin-bottom: 40px;
+    width: 50vw;
+    top: -70px;
+    left: -50px;
+    background: none;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 20px;
+    overflow-x: auto;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-radius: 20px;
+    scroll-behavior: smooth;
+}
+.image-slide img:nth-child(1){
+    border: 2px solid blue;
+    transform: scale(1);
+}
+.image-slide img{
+    width: 250px;
+    height: 300px;
+    border-radius: 20px;
+    cursor: pointer;
+    transform: scale(0.9);
+}
+@media (max-width: 615px){
+    .image-container{
+        justify-content: flex-start;
+    }
+    .image-slide{
+        width: 90vw;
+        left: 0px
+    }
+}

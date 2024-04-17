@@ -1,0 +1,193 @@
+body{
+    margin: 0px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+:root{
+    --primary-color: linear-gradient(to right, orangered, gold);
+    --secondary-color: linear-gradient(to left, orangered, gold);
+    --bxshadow: 2px 2px 6px 2px rgba(0, 0, 0, 0.5);
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    background-image: url("./img/IMG_0126.JPG");
+    background-repeat: repeat;
+    background-size: contain;
+}
+.msg1{
+    width: 100%;
+    text-align: center;
+    font-family: fangsong;
+    font-size: 4em;
+    color: red;
+    animation: leftSlide 2s ease-in-out;
+    margin-bottom: 10px;
+}
+.adminmsg{
+    width: 100%;
+    text-align: center;
+    font-family: fangsong;
+    font-size: 10em;
+    color: red;
+    animation: rotateAndFade reverse 2s ease-in-out;
+    margin: 10px 0px;
+}
+.msg{
+    width: 100%;
+    text-align: center;
+    font-family: fangsong;
+    font-size: 10em;
+    color: red;
+    animation: rotateAndFade reverse 2s ease-in-out;
+    margin: 10px 0px;
+}
+.msg2{
+    width: 100%;
+    text-align: center;
+    font-family: fangsong;
+    font-size: 4em;
+    color: red;
+    animation: rightSlide 2s ease-in-out;
+    margin-top: 10px;
+}
+.content{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+#card1{
+    z-index: 5; 
+    transform: rotate(0deg);
+    animation: roll 1s;
+}
+#card2{
+    z-index: 4; 
+    transform: rotate(15deg);
+    animation: topSlide 1s;
+}
+#card3{
+    z-index: 3; 
+    transform: rotate(-15deg);
+    animation: bottomSlide 1s;
+}
+#card4{
+    z-index: 2; 
+    transform: rotate(10deg);
+    animation: leftSlide 1s;
+}
+#card5{
+    z-index: 1; 
+    transform: rotate(-10deg);
+    animation: rightSlide 1s;
+}
+.card{
+    font-size: 80%;
+    grid-column: 1;
+    grid-row: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 400px;
+    padding: 20px;
+    background: var(--primary-color);
+    color: black;
+    font-weight: 800;
+    border-radius: 20px;
+    box-shadow: var(--bxshadow);
+    transition: 2s ease-in-out;
+    cursor: pointer;
+}
+.card input{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(200, 10, 100, 0.2);
+    backdrop-filter: blur(1px);
+    padding: 10px;
+    border-radius: 30px;
+    border: 4px gold solid;
+    width: 80%;
+    height: 30px;
+    font-size: 1.2em;
+    transition: 1s ease-in-out;
+}
+.card input:focus{
+    outline: none;
+}
+.card button{
+    margin-top: 20px;
+    border-radius: 20px;
+    background-color: var(--secondary-color);
+    font-size: 1.5em;
+    border: 2px solid black;
+    padding: 10px 30px;
+    cursor: pointer;
+    box-shadow: var(--bxshadow);
+}
+.card button:active{
+    box-shadow: none;
+}
+.card h1{
+    width: 100%;
+    text-align: center;
+    font-family: cursive;
+    font-size: 2.8em;
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+.card p{
+    font-family: cursive;
+    font-size: 1.2em;
+    text-align: center;
+    transition: 1s ease-in-out;
+}
+@keyframes roll {
+    0%{
+        transform: rotate(360deg);
+    }
+}
+@keyframes topSlide {
+    0%{
+        transform: translateY(400px);
+    }
+}
+@keyframes bottomSlide {
+    0%{
+        transform: translateY(-400px);
+    }
+}
+@keyframes leftSlide {
+    0%{
+        transform: translateX(400px);
+    }
+}
+@keyframes rightSlide {
+    0%{
+        transform: translateX(-400px);
+    }
+}
+@keyframes rotateAndFade{
+    100%{
+        transform: rotate(360deg) scale(0.0);
+        display: none;
+        visibility: hidden;
+    }
+}
+@media (max-width: 615px){
+    .msg{
+        font-size: 5em;
+    }
+    .msg1,.msg2{
+        font-size: 3em;
+    }
+    .adminmsg{
+        font-size: 3.5em;
+    }
+    .card{
+        width: 200px;
+    }
+}
